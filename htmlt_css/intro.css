@@ -1,26 +1,3 @@
-div#main {
-    width: 300px;
-    height: 300px;
-    margin-left: 300px;
-    margin-top: 50px;
-    /* display: flex; */
-    /* margin: 250px; */
-}
-
-img.image {
-    width: 250;
-}
-
-.main {
-    display: flex;
-}
-
-.main-left-item {
-    width: 50%;
-    background: cornflowerblue;
-}
-
-.main-right-item {
-    background: cyan;
-    width: 50%;
+img.card-img-top.image {
+    height: 186px;
 }

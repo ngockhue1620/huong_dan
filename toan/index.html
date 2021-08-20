@@ -1,0 +1,41 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="./index.css">
+   
+</head>
+
+<body>
+    <div class="main">
+        <div class="questionContainer">
+            <p id="question"></p>
+            <p id="result"></p>
+        </div>
+        <div class="answerContainer">
+            <button id="buttonClickA" onclick="checkAnswer(0)" class="height">Dap An a</button>
+            <button id="buttonClickB" onclick="checkAnswer(1)" class="height">Dap An b</button>
+            <button id="buttonClickC" onclick="checkAnswer(2)" class="height">Dap An c</button>
+            <button id="buttonClickD" onclick="checkAnswer(3)" class="height">Dap An d</button>
+        </div>
+        <div class="questionList">
+            <!-- <p>1 2 3 4 5 6 7 </p>
+                <button onclick="nextQuestion()">Next</button> -->
+              <div id="list">
+
+              </div>  
+            <!-- <script type = 'text/javascript'>
+                for (let i = 0; i < data.length; i++) {
+                   
+                    return ocument.createElement("button")
+                }
+                
+            </script> -->
+            
+        </div>
+    </div>
+
+</body>
+<script src="./index.js"></script>
+
+</html>

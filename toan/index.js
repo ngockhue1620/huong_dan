@@ -4,7 +4,53 @@ var isRightPosition = 0;
 // mang gom co phep tinh, vi tri dung, vi tri nguoi dung chon
 var data = []
 var isChooseQuestion = 0;
+function end(){
+    let point = 0
+    let notDo = ""
+    for(let i=0;i<data.length;i++){
+        if(data[i].userChoose!==-1){
+            if(data[i].positionRightAnswer === data[i].userChoose){
+                point+=1
+            }
+        }else{
+            notDo += i + " "
+        }
+        
+    }
+    if(notDo === ""){
+        alert("Diem So Cua Ban La: "+ point)
+    }else{
+        alert("Con mot so cau chua hoang thanh: "+ notDo)
+    }
+    
+}
 
+function changeStyle (choose){
+    if(choose ===0){
+        document.getElementById("buttonClickA").style.background = "green";
+        document.getElementById("buttonClickB").style.background = "white";
+        document.getElementById("buttonClickC").style.background = "white";
+        document.getElementById("buttonClickD").style.background = "white";
+    }
+    if(choose ===1){
+        document.getElementById("buttonClickA").style.background = "white";
+        document.getElementById("buttonClickB").style.background = "green";
+        document.getElementById("buttonClickC").style.background = "white";
+        document.getElementById("buttonClickD").style.background = "white";
+    }
+    if(choose ===2){
+        document.getElementById("buttonClickA").style.background = "white";
+        document.getElementById("buttonClickB").style.background = "white";
+        document.getElementById("buttonClickC").style.background = "green";
+        document.getElementById("buttonClickD").style.background = "white";
+    }
+    if(choose ===3){
+        document.getElementById("buttonClickA").style.background = "white";
+        document.getElementById("buttonClickB").style.background = "white";
+        document.getElementById("buttonClickC").style.background = "white";
+        document.getElementById("buttonClickD").style.background = "green";
+    }
+}
 
 
 function nextQuestion() {
@@ -71,13 +117,16 @@ function createCaulator() {
 }
 
 function checkAnswer(choose) {
-    console.log("choose", choose,"cau hoi duoc chon", isChooseQuestion)
-    console.log("vi tri dung cua cau hoi ",data[isChooseQuestion].positionRightAnswer)
-    if (choose == data[isChooseQuestion].positionRightAnswer) {
-        document.getElementById("result").innerHTML = "Right";
-    } else {
-        document.getElementById("result").innerHTML = "False";
-    }
+    
+    // console.log("vi tri dung cua cau hoi ",data[isChooseQuestion].positionRightAnswer)
+    // if (choose == data[isChooseQuestion].positionRightAnswer) {
+    //     document.getElementById("result").innerHTML = "Right";
+    // } else {
+    //     document.getElementById("result").innerHTML = "False";
+    // }
+    changeStyle(choose)    
+    data[isChooseQuestion].userChoose = choose
+    console.log(data)
 
 
 }
@@ -96,6 +145,20 @@ function changeQuestion(index){
         }
 
     }
+    // cap nhap style
+    let userChoose =  data[index].userChoose
+    if(userChoose === -1){
+        document.getElementById("buttonClickA").style.background = "white";
+        document.getElementById("buttonClickB").style.background = "white";
+        document.getElementById("buttonClickC").style.background = "white";
+        document.getElementById("buttonClickD").style.background = "white";  
+    }else{
+        changeStyle(userChoose)
+    }
+
+    
+
+    // cap nhap dap an
     document.getElementById("question").innerHTML = data[index].caulate
     document.getElementById("buttonClickA").innerHTML = answers[0]
     document.getElementById("buttonClickB").innerHTML = answers[1]

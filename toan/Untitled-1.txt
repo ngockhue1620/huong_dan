@@ -1,0 +1,15 @@
+data : noi khai bao cac bien de su dung
+methods: noi de khai bao cac funtion 
+computed: noi de thuc hien khai bao cac funtion() // dung de tinh toan
+watch: theo doi 1 cai bien (neu cai bien do co thay doi ve mat gia tri) (minh se thuc hien mot so viec ..)
+
+//Lifecycle
+mounted():... tao dua lieu hay, lam gi do khong biet .. 
+created():
+// props data
+dung de truyen data tu A -> B hoac nguoc lai
+ +data: object ,funtion , number ,stirng ..
+//envet onClick
+// cach su dung component 
+
+-- bind du lieu 2 chieu

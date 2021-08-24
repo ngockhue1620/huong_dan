@@ -62,3 +62,11 @@ p#question {
     justify-content: center;
     align-self: center;
 }
+
+div#list {
+    /* align-self: center; */
+    display: flex;
+    justify-content: center;
+    margin: 5%;
+    flex-wrap: wrap;
+}
